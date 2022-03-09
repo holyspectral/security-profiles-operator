@@ -518,6 +518,7 @@ func (r *ReconcileSPOd) getConfiguredSPOd(
 
 	// AppArmor parameters
 	if cfg.Spec.EnableAppArmor {
+		delete(newSPOd.Annotations, "container.seccomp.security.alpha.kubernetes.io/security-profiles-operator")
 		falsely, truly := false, true
 		var userRoot int64 = 0
 		// a more privileged mode is required when apparmor is enabled
@@ -528,7 +529,39 @@ func (r *ReconcileSPOd) getConfiguredSPOd(
 			ReadOnlyRootFilesystem:   &falsely,
 			RunAsUser:                &userRoot,
 			RunAsGroup:               &userRoot,
+			Capabilities:             nil,
 		}
+
+		templateSpec.Containers[bindata.ContainerIDDaemon].VolumeMounts = append(templateSpec.Containers[bindata.ContainerIDDaemon].VolumeMounts, corev1.VolumeMount{
+			MountPath: "/etc/apparmor.d",
+			Name:      "aa",
+		})
+		templateSpec.Containers[bindata.ContainerIDDaemon].VolumeMounts = append(templateSpec.Containers[bindata.ContainerIDDaemon].VolumeMounts, corev1.VolumeMount{
+			MountPath: "/sys/kernel/security",
+			Name:      "aafs",
+		})
+		templateSpec.Containers[bindata.ContainerIDDaemon].VolumeMounts = append(templateSpec.Containers[bindata.ContainerIDDaemon].VolumeMounts, corev1.VolumeMount{
+			MountPath: "/tmp",
+			Name:      "tmp-volume",
+		})
+
+		templateSpec.Volumes = append(templateSpec.Volumes, corev1.Volume{
+			Name: "aa",
+			VolumeSource: corev1.VolumeSource{
+				HostPath: &corev1.HostPathVolumeSource{
+					Path: "/etc/apparmor.d",
+				},
+			},
+		})
+
+		templateSpec.Volumes = append(templateSpec.Volumes, corev1.Volume{
+			Name: "aafs",
+			VolumeSource: corev1.VolumeSource{
+				HostPath: &corev1.HostPathVolumeSource{
+					Path: "/sys/kernel/security",
+				},
+			},
+		})
 
 		templateSpec.Containers[bindata.ContainerIDDaemon].Args = append(
 			templateSpec.Containers[bindata.ContainerIDDaemon].Args,

@@ -1,4 +1,4 @@
-# github.com/BurntSushi/toml v1.0.0
+# github.com/BurntSushi/toml v1.1.0
 github.com/BurntSushi/toml
 github.com/BurntSushi/toml/internal
 # github.com/Microsoft/go-winio v0.5.1
@@ -317,7 +317,7 @@ github.com/spf13/pflag
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/require
 github.com/stretchr/testify/suite
-# github.com/urfave/cli/v2 v2.3.0
+# github.com/urfave/cli/v2 v2.5.0
 ## explicit
 github.com/urfave/cli/v2
 # github.com/xanzy/go-gitlab v0.43.0

@@ -1,4 +1,4 @@
-# github.com/BurntSushi/toml v1.0.0
+# github.com/BurntSushi/toml v1.1.0
 github.com/BurntSushi/toml
 github.com/BurntSushi/toml/internal
 # github.com/Microsoft/go-winio v0.5.1
@@ -29,6 +29,8 @@ github.com/ReneKroon/ttlcache/v2
 github.com/acobaugh/osrelease
 # github.com/acomagu/bufpipe v1.0.3
 github.com/acomagu/bufpipe
+# github.com/antzucaro/matchr v0.0.0-20210222213004-b04723ef80f0
+github.com/antzucaro/matchr
 # github.com/aquasecurity/libbpfgo v0.2.5-libbpf-0.7.0
 ## explicit
 github.com/aquasecurity/libbpfgo
@@ -317,7 +319,7 @@ github.com/spf13/pflag
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/require
 github.com/stretchr/testify/suite
-# github.com/urfave/cli/v2 v2.3.0
+# github.com/urfave/cli/v2 v2.8.0
 ## explicit
 github.com/urfave/cli/v2
 # github.com/xanzy/go-gitlab v0.43.0

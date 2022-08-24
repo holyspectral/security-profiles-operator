@@ -8,7 +8,7 @@ require (
 	github.com/aquasecurity/libbpfgo v0.2.5-libbpf-0.7.0
 	github.com/containers/common v0.47.4
 	github.com/crossplane/crossplane-runtime v0.14.1-0.20210713194031-85b19c28ea88
-	github.com/go-logr/logr v1.2.2
+	github.com/go-logr/logr v1.2.3
 	github.com/jetstack/cert-manager v1.7.1
 	github.com/maxbrunsfeld/counterfeiter/v6 v6.4.1
 	github.com/nxadm/tail v1.4.8
@@ -23,11 +23,11 @@ require (
 	github.com/urfave/cli/v2 v2.3.0
 	google.golang.org/grpc v1.44.0
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.2.0
-	google.golang.org/protobuf v1.27.1
-	k8s.io/api v0.23.4
-	k8s.io/apimachinery v0.23.4
+	google.golang.org/protobuf v1.28.0
+	k8s.io/api v0.25.0
+	k8s.io/apimachinery v0.25.0
 	k8s.io/client-go v0.23.4
-	k8s.io/klog/v2 v2.40.1
+	k8s.io/klog/v2 v2.70.1
 	sigs.k8s.io/controller-runtime v0.11.1
 	sigs.k8s.io/controller-tools v0.8.0
 	sigs.k8s.io/mdtoc v1.1.0
